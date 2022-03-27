@@ -24,7 +24,7 @@ function App() {
       social: social ? 'Social Services' : '',
       virtual: virtual ? 'Virtual Event Services' : ''
     }
-    axios.post('http://localhost:5000/message', getData)
+    axios.post('https://limitless-reaches-04536.herokuapp.com/message', getData)
       .then(res => {
         if (res.data.acknowledged) {
           alert('Message send Successfully!!!')
@@ -33,7 +33,7 @@ function App() {
     console.log(getData);
   };
   useEffect(() => {
-    axios('http://localhost:5000/messages')
+    axios('https://limitless-reaches-04536.herokuapp.com/messages')
       .then(res => setGetMessage(res.data));
   }, []);
   console.log(getMessage);
